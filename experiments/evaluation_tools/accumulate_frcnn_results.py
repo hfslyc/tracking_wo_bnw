@@ -32,4 +32,4 @@ if __name__ == "__main__":
               '{.2f} & '.format(results[:, 6].mean())
               '{} & '.format(int(results[:, 7].sum()))
               '{} & '.format(int(results[:, 8].sum()))
-              '{} \\\\'.format(int(results[:, 9].sum()))
+              '{} \\\\'.format(int(results[:, 9].sum())))

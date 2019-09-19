@@ -23,8 +23,8 @@ class MOT17_Wrapper(Dataset):
 			sequences = test_sequences
 		elif "all" == split:
 			sequences = train_sequences + test_sequences
-		elif f"MOT17-{split}" in train_sequences + test_sequences:
-			sequences = [f"MOT17-{split}"]
+		elif "MOT17-{}".format(split) in train_sequences + test_sequences:
+			sequences = ["MOT17-{}".format(split)]
 		else:
 			raise NotImplementedError("MOT split not available.")
 
@@ -63,8 +63,8 @@ class MOT19CVPR_Wrapper(MOT17_Wrapper):
 			sequences = test_sequences
 		elif "all" == split:
 			sequences = train_sequences + test_sequences
-		elif f"CVPR19-{split}" in train_sequences + test_sequences:
-			sequences = [f"CVPR19-{split}"]
+		elif "CVPR19-{}".format(split) in train_sequences + test_sequences:
+			sequences = ["CVPR19-{}".format(split)]
 		else:
 			raise NotImplementedError("MOT19CVPR split not available.")
 
