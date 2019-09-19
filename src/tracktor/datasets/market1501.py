@@ -50,7 +50,7 @@ class Market1501(Dataset):
 			self.data = []
 
 		self.build_samples()
-		
+
 
 	def __len__(self):
 		return len(self.data)

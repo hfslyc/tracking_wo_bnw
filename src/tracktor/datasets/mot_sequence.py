@@ -182,7 +182,7 @@ class MOT17_Sequence(Dataset):
         elif "17" in self._seq_name:
             det_file = osp.join(
                 mot17_label_path,
-                f'MOT17-{self._seq_name[-2:]}-{self._dets[:-2]}',
+                'MOT17-{}-{'.format(self._seq_name[-2:], self._dets[:-2]}),
                 'det',
                 'det.txt')
         else:
@@ -290,7 +290,7 @@ class MOT19CVPR_Sequence(MOT17_Sequence):
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
 
-        file = osp.join(output_dir, f'{self._seq_name}.txt')
+        file = osp.join(output_dir, '{}.txt'.format(self._seq_name))
 
         print("[*] Writing to: {}".format(file))
 
@@ -319,8 +319,8 @@ class MOT17LOWFPS_Sequence(MOT17_Sequence):
         self._seq_name = seq_name
         self._dets = dets
 
-        self._mot_dir = osp.join(cfg.DATA_DIR, 'MOT17_LOW_FPS', f'MOT17_{split}_FPS')
-        self._mot17_label_dir = osp.join(cfg.DATA_DIR, 'MOT17_LOW_FPS', f'MOT17_{split}_FPS')
+        self._mot_dir = osp.join(cfg.DATA_DIR, 'MOT17_LOW_FPS', 'MOT17_{}_FPS'.format(split))
+        self._mot17_label_dir = osp.join(cfg.DATA_DIR, 'MOT17_LOW_FPS', 'MOT17_{}_FPS'.format(split))
 
         # TODO: refactor code of both classes to consider 16,17 and 19
         self._label_dir = osp.join(cfg.DATA_DIR, 'MOT16Labels')
