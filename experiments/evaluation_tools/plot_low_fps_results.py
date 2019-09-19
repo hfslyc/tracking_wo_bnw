@@ -54,8 +54,8 @@ if __name__ == "__main__":
     for ls, (t, data) in zip(linestyle, results.items()):
         # y.append(np.array(data)[:, 0])
         # y.append(np.array(data)[:, 1])
-        plt.plot(x, np.array(data)[:, 0], label=f'{t} - IDF1', ls=ls)
-        plt.plot(x, np.array(data)[:, 1], label=f'{t} - MOTA', ls=ls)
+        plt.plot(x, np.array(data)[:, 0], label='{} - IDF1'.format(t), ls=ls)
+        plt.plot(x, np.array(data)[:, 1], label='{} - MOTA'.format(t), ls=ls)
 
     plt.xlabel('FPS', fontsize=tickfontsize)
 

@@ -26,10 +26,10 @@ if __name__ == "__main__":
         results = np.array(results)
         # print(results)
         # & Method & MOTA $\uparrow$ & IDF1 $\uparrow$ & MT $\uparrow$ & ML $\downarrow$ & FP $\downarrow$ & FN $\downarrow$ & ID Sw.
-        print(f'{t} & {results[:, 0].mean():.2f} & '
-              f'{results[:, 1].mean():.2f} & '
-              f'{results[:, 5].mean():.2f} & '
-              f'{results[:, 6].mean():.2f} & '
-              f'{int(results[:, 7].sum())} & '
-              f'{int(results[:, 8].sum())} & '
-              f'{int(results[:, 9].sum())} \\\\')
+        print('{} & {.2f} & '.format(t, results[:, 0].mean())
+              '{.2f} & '.format(results[:, 1].mean())
+              '{.2f} & '.format(results[:, 5].mean())
+              '{.2f} & '.format(results[:, 6].mean())
+              '{} & '.format(int(results[:, 7].sum()))
+              '{} & '.format(int(results[:, 8].sum()))
+              '{} \\\\'.format(int(results[:, 9].sum()))

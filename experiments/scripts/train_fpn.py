@@ -376,7 +376,7 @@ if __name__ == '__main__':
 
     if args.resume:
         load_name = os.path.join(os.path.join(args.save_dir, args.net, args.dataset, args.resume_exp_name),
-                                 f'fpn_{args.resume_session}_{args.resume_epoch}.pth')
+                                 'fpn_{}_{}.pth'.format(args.resume_session, args.resume_epoch))
         _print("loading checkpoint %s" % (load_name), )
         checkpoint = torch.load(load_name)
         args.session = checkpoint['session']
@@ -487,7 +487,7 @@ if __name__ == '__main__':
                 loss_temp = 0
                 start = time.time()
 
-        save_name = os.path.join(output_dir, f'fpn_{args.session}_{epoch}.pth')
+        save_name = os.path.join(output_dir, 'fpn_{}_{}.pth'.format(args.session, epoch))
         save_checkpoint({
             'session': args.session,
             'epoch': epoch,
@@ -519,7 +519,7 @@ if __name__ == '__main__':
 
         # print because of flushing in imdd_eval.evaluate_detections
         _print("")
-        _print(f'[TRAIN]: Mean AP = {np.mean(aps):.4f}')
+        _print('[TRAIN]: Mean AP = {.4f}'.format(np.mean(aps)))
         if args.use_tfboard:
             write_scalars(writer, [np.mean(aps)], ['train'], epoch, tag='mean_ap')
 
@@ -536,6 +536,6 @@ if __name__ == '__main__':
 
         # print because of flushing in imdd_eval.evaluate_detections
         _print("")
-        _print(f'[VAL]: Mean AP = {np.mean(aps):.4f}')
+        _print('[VAL]: Mean AP = {.4f}'.format(np.mean(aps)))
         if args.use_tfboard:
             write_scalars(writer, [np.mean(aps)], ['val'], epoch, tag='mean_ap')
