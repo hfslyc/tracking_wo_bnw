@@ -89,7 +89,7 @@ def my_main(tracktor, siamese, _config):
 
         obj_detect.load_state_dict(checkpoint['model'])
     else:
-        raise NotImplementedError(f"Object detector type not known: {tracktor['network']}")
+        raise NotImplementedError('Object detector type not known: {}'.format(tracktor['network']))
 
     pprint.pprint(config.cfg)
     obj_detect.eval()
