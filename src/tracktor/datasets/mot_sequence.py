@@ -182,7 +182,7 @@ class MOT17_Sequence(Dataset):
         elif "17" in self._seq_name:
             det_file = osp.join(
                 mot17_label_path,
-                'MOT17-{}-{'.format(self._seq_name[-2:], self._dets[:-2]}),
+                'MOT17-{}-{'.format(self._seq_name[-2:], self._dets[:-2]),
                 'det',
                 'det.txt')
         else:
