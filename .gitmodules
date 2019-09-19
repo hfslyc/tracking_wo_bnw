@@ -1,6 +1,8 @@
 [submodule "src/fpn"]
 	path = src/fpn
 	url = https://github.com/hfslyc/FPN_Pytorch.git
+	branch = tracking_wo_bnw
 [submodule "src/frcnn"]
 	path = src/frcnn
 	url = https://github.com/hfslyc/pytorch-faster-rcnn.git
+	branch = tracking_wo_BnW
